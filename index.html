@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="csrf" content="demo">
-<title>Avaliação Pedagógica – Demonstração</title>
+<title>Avaliação Pedagógica – APAE Botucatu</title>
 <style>
 [hidden] { display: none !important; }
 /* Sistema de Avaliação Pedagógica – APAE Botucatu
@@ -48,34 +48,8 @@
   --raio: 10px;
   --fonte: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --pagina: #0e1320; --superficie: #161c2c; --superficie-2: #1c2336;
-    --tinta: #eaedf4; --tinta-2: #b8bfd0; --tinta-3: #9aa2b6;
-    --linha: #2a3247; --linha-forte: #3a4560;
-    --acao: #7aa3ff; --acao-hover: #9dbcff; --acao-texto: #0e1320;
-    --erro: #ff8a80; --erro-fundo: #3b1a1a; --ok: #6fd69b; --ok-fundo: #12301f;
-    --aviso-fundo: #3a2f10; --aviso-tinta: #ffd98a;
-    --g-mom-1: #184f95; --g-mom-2: #3987e5; --g-mom-3: #9ec5f4;
-    --g-esc-1: #8a3514; --g-esc-2: #d95926; --g-esc-3: #f4a77c;
-    --g-neutro: #4a4a46; --g-serie: #3987e5; --g-meta: #eaedf4;
-    --g-grade: #252c3f; --g-eixo: #3a4560;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --pagina: #0e1320; --superficie: #161c2c; --superficie-2: #1c2336;
-  --tinta: #eaedf4; --tinta-2: #b8bfd0; --tinta-3: #9aa2b6;
-  --linha: #2a3247; --linha-forte: #3a4560;
-  --acao: #7aa3ff; --acao-hover: #9dbcff; --acao-texto: #0e1320;
-  --erro: #ff8a80; --erro-fundo: #3b1a1a; --ok: #6fd69b; --ok-fundo: #12301f;
-  --aviso-fundo: #3a2f10; --aviso-tinta: #ffd98a;
-  --g-mom-1: #184f95; --g-mom-2: #3987e5; --g-mom-3: #9ec5f4;
-  --g-esc-1: #8a3514; --g-esc-2: #d95926; --g-esc-3: #f4a77c;
-  --g-neutro: #4a4a46; --g-serie: #3987e5; --g-meta: #eaedf4;
-  --g-grade: #252c3f; --g-eixo: #3a4560;
-}
+
+
 
 * { box-sizing: border-box; }
 html { font-size: 100%; }
@@ -299,6 +273,51 @@ details.multi .opcoes .n-opcao { margin-left: auto; color: var(--tinta-2); font-
 details.multi .opcoes label.sem-dados { color: var(--tinta-3); cursor: not-allowed; }
 #mensagem p { margin: 0 0 .6rem; }
 details.multi .opcoes { min-width: 20rem; max-width: calc(100vw - 32px); }
+
+/* ================================================================ Identidade visual da APAE Botucatu
+   Cores tiradas do site da APAE: azul dos títulos #00599d, verde do traço sob os títulos #65b560,
+   fundo #f6f5f8, texto cinza-azulado. Cantos retos (4px), sem sombras, blocos brancos chapados. */
+:root {
+  --pagina: #f6f5f8; --superficie: #ffffff; --superficie-2: #f1f2f6;
+  --tinta: #2f3442; --tinta-2: #5f6478; --tinta-3: #6f7488;
+  --linha: #e4e5ec; --linha-forte: #c9cbd6;
+  --acao: #00599d; --acao-hover: #00477e; --acao-texto: #ffffff;
+  --titulo: #00599d; --verde-apae: #65b560; --foco: #2f7d2a;
+  /* gráficos (validados): azul = momentos do ano, verde = escala de respostas */
+  --g-mom-1: #7fb3e3; --g-mom-2: #2f7fc6; --g-mom-3: #00599d;
+  --g-esc-1: #7fc27a; --g-esc-2: #4a9a45; --g-esc-3: #25622a;
+  --g-neutro: #cfd1da; --g-serie: #00599d; --g-meta: #2f3442;
+  --g-grade: #eceef3; --g-eixo: #c9cbd6;
+  --raio: 4px;
+}
+
+
+h1, .grafico h2, .cartao > h2 { color: var(--titulo); }
+h1 { font-size: 1.875rem; }
+h1::after { content: ""; display: block; width: 48px; height: 4px; background: var(--verde-apae); margin-top: .55rem; }
+.grafico h2::after { content: ""; display: block; width: 32px; height: 3px; background: var(--verde-apae); margin-top: .45rem; }
+.cartao, .grafico, .registro, .zona-envio, .termo-caixa, .aviso { border-radius: var(--raio); }
+.grafico, .cartao { border: 0; }
+.botao, input[type=text], input[type=password], input[type=number], input[type=search], select, textarea,
+details.multi summary, details.multi .opcoes, .segmentado { border-radius: var(--raio); }
+details.multi .opcoes { box-shadow: 0 4px 14px rgba(20, 30, 60, .10); }
+.filtros { background: var(--superficie); padding: 1rem 1.25rem; border: 0; border-radius: var(--raio); }
+.filtro > span, .filtro > label { font-weight: 500; }
+.resumo { gap: 0; background: var(--superficie); border-radius: var(--raio); }
+.indicador { border: 0; border-radius: 0; background: transparent; padding: 1rem 1.5rem; }
+.indicador + .indicador { border-left: 1px solid var(--linha); }
+.indicador .valor { color: var(--titulo); font-weight: 600; }
+.nav a { border-radius: var(--raio); }
+.nav a[aria-current="page"] { border-left-color: var(--verde-apae); }
+.etiqueta { background: none; border: 0; padding: 0; border-radius: 0; font-size: .875rem; color: var(--tinta-2); }
+.perfil { gap: .2rem .9rem; }
+.perfil li + li::before { content: "|"; color: var(--linha-forte); margin-right: .9rem; }
+table.dados th { background: transparent; border-bottom: 2px solid var(--linha); }
+@media (max-width: 860px) { .filtros { padding: .75rem; } }
+@media (max-width: 520px) {
+  .indicador + .indicador { border-left: 0; border-top: 1px solid var(--linha); }
+}
+.grade { align-items: start; }
 /* ---------------------------------------------------------------- só na demonstração */
 :root { --demo-fundo: #e8f0ff; --demo-tinta: #1b3d8f; --toast-fundo: #17203a; --toast-tinta: #ffffff; }
 @media (prefers-color-scheme: dark) {
@@ -318,22 +337,34 @@ body { background: var(--pagina); }
   display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; justify-content: space-between; }
 .faixa-demo #demo-msg { min-width: 0; flex: 1 1 22rem; }
 
-.topo { background: var(--superficie); border-bottom: 1px solid var(--linha); }
-.topo .dentro { max-width: 76rem; margin: 0 auto; padding: 1rem max(16px, 2.25rem); display: flex; flex-wrap: wrap; gap: .25rem 1rem; align-items: baseline; justify-content: space-between; }
-.topo strong { font-size: 1.125rem; }
-.topo span { color: var(--tinta-2); font-size: .875rem; }
-.rodape-pagina { max-width: 76rem; margin: 0 auto; padding: 0 max(16px, 2.25rem) 2rem; color: var(--tinta-2); font-size: .8125rem; }
-@media (max-width: 860px) { .topo .dentro, .rodape-pagina { padding-left: 16px; padding-right: 16px; } }
+:root { color-scheme: light; }
+.aviso-demo { background: #e8f4e7; color: #25622a; font-size: .8125rem; text-align: center; padding: .4rem 16px; }
+.topo { background: #ffffff; border-bottom: 1px solid var(--linha); }
+.topo .dentro, .rodape .dentro { max-width: calc(76rem + 4.5rem); margin: 0 auto; padding-left: max(16px, 2.25rem); padding-right: max(16px, 2.25rem); }
+.topo .dentro { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; padding-top: 1.1rem; padding-bottom: 1.1rem; }
+.topo .nome { display: flex; flex-direction: column; line-height: 1.25; }
+.topo .nome strong { color: var(--titulo); font-size: 1.375rem; font-weight: 600; }
+.topo .nome span { color: var(--tinta-2); font-size: .9375rem; }
+.topo .parceria { color: var(--tinta-2); font-size: .875rem; text-align: right; }
+.principal { padding-top: 2rem; }
+.rodape { background: var(--titulo); color: #ffffff; margin-top: 2rem; }
+.rodape .dentro { padding-top: 1.5rem; padding-bottom: 1.75rem; font-size: .875rem; display: grid; gap: .35rem; }
+.rodape strong { font-weight: 600; font-size: 1rem; }
+.rodape p { margin: 0; max-width: 60rem; color: #dbe7f3; }
+@media (max-width: 860px) {
+  .topo .dentro, .rodape .dentro { padding-left: 16px; padding-right: 16px; }
+  .topo .parceria { text-align: left; }
+}
 </style>
 </head>
 <body>
+<div class="aviso-demo">Versão de demonstração com dados fictícios</div>
 <header class="topo"><div class="dentro">
-  <strong>Avaliação pedagógica</strong>
-  <span>Projeto de extensão UNESP e APAE Botucatu</span>
+  <div class="nome"><strong>APAE Botucatu</strong><span>Avaliação pedagógica</span></div>
+  <div class="parceria">Projeto de extensão em parceria com a UNESP<br>Departamento de Biodiversidade e Bioestatística</div>
 </div></header>
 <main class="principal">
   <div class="conteudo">
-    <div class="faixa-demo" role="note"><span id="demo-msg">Demonstração com 40 estudantes fictícios. Nenhum dado real é usado nesta página. No sistema completo há login para coordenação e professores, envio das planilhas e registro de acessos.</span></div>
     <section class="pagina" id="pg-painel">
 <div class="cabeca-pagina">
   <div>
@@ -427,8 +458,8 @@ body { background: var(--pagina); }
     <article class="grafico largo" id="c-evolucao">
       <header>
         <div><h2>Repertório por área ao longo do ano</h2>
-          <p>Média do % de repertório (pontos obtidos ÷ máximo da área) em cada momento avaliado.</p></div>
-        <div class="acoes"><button type="button" class="botao secundario pequeno" data-tabela>Ver tabela</button></div>
+          <p>Média do % de repertório (pontos obtidos ÷ pontuação máxima da área) em cada momento.</p></div>
+        <div class="acoes"><button type="button" class="link-botao pequeno" data-tabela>Ver tabela</button></div>
       </header>
       <ul class="legenda"></ul><div class="tela"><canvas></canvas></div><div class="tabela-grafico rolagem oculto"></div>
     </article>
@@ -436,7 +467,7 @@ body { background: var(--pagina); }
     <article class="grafico" id="c-metas">
       <header>
         <div><h2 data-titulo>Metas do PAEE</h2><p data-sub></p></div>
-        <div class="acoes"><button type="button" class="botao secundario pequeno" data-tabela>Ver tabela</button></div>
+        <div class="acoes"><button type="button" class="link-botao pequeno" data-tabela>Ver tabela</button></div>
       </header>
       <ul class="legenda"></ul><div class="tela"><canvas></canvas></div><div class="tabela-grafico rolagem oculto"></div>
     </article>
@@ -444,7 +475,7 @@ body { background: var(--pagina); }
     <article class="grafico" id="c-distribuicao">
       <header>
         <div><h2>Como os estudantes realizam as habilidades</h2><p data-sub></p></div>
-        <div class="acoes"><button type="button" class="botao secundario pequeno" data-tabela>Ver tabela</button></div>
+        <div class="acoes"><button type="button" class="link-botao pequeno" data-tabela>Ver tabela</button></div>
       </header>
       <ul class="legenda"></ul><div class="tela"><canvas></canvas></div><div class="tabela-grafico rolagem oculto"></div>
     </article>
@@ -457,7 +488,7 @@ body { background: var(--pagina); }
           <select id="f-agrupar">
             <option value="faixa">Por faixa etária</option><option value="suporte">Por nível de suporte</option><option value="escolaridade">Por escolaridade</option><option value="diagnostico">Por tipo de diagnóstico</option>
           </select>
-          <button type="button" class="botao secundario pequeno" data-tabela>Ver tabela</button>
+          <button type="button" class="link-botao pequeno" data-tabela>Ver tabela</button>
         </div>
       </header>
       <div class="tela"><canvas></canvas></div><div class="tabela-grafico rolagem oculto"></div>
@@ -466,7 +497,7 @@ body { background: var(--pagina); }
     <article class="grafico" id="c-itens">
       <header>
         <div><h2>Habilidades com menor independência</h2><p data-sub></p></div>
-        <div class="acoes"><button type="button" class="botao secundario pequeno" data-tabela>Ver tabela</button></div>
+        <div class="acoes"><button type="button" class="link-botao pequeno" data-tabela>Ver tabela</button></div>
       </header>
       <ul class="legenda"></ul><div class="tela"><canvas></canvas></div><div class="tabela-grafico rolagem oculto"></div>
     </article>
@@ -483,7 +514,7 @@ body { background: var(--pagina); }
           <label class="so-leitor" for="f-ano-ind">Ano</label>
           <select id="f-ano-ind" class="oculto"></select>
           <label class="check pequeno" hidden><input type="checkbox" id="mostrar-nomes"> Mostrar nomes na lista</label>
-          <button type="button" class="botao secundario pequeno" data-tabela>Ver tabela</button>
+          <button type="button" class="link-botao pequeno" data-tabela>Ver tabela</button>
         </div>
       </header>
       <ul class="perfil"></ul>
@@ -495,7 +526,10 @@ body { background: var(--pagina); }
 </section>
   </div>
 </main>
-<p class="rodape-pagina">Indicadores calculados como na planilha da APAE: % de repertório = pontos obtidos ÷ (nº de itens × 3). Escala: 0 não faz parte do programa, 1 não faz, 2 com auxílio, 3 independente.</p>
+<footer class="rodape"><div class="dentro">
+  <strong>Sobre os indicadores</strong>
+  <p>% de repertório = pontos obtidos ÷ (número de itens × 3), como na planilha de avaliação. Escala: 0 não faz parte do programa, 1 não faz, 2 com auxílio, 3 independente. Os 40 estudantes desta página são fictícios.</p>
+</div></footer>
 <script>/*!
  * Chart.js v4.4.7
  * https://www.chartjs.org
